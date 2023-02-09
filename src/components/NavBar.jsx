@@ -1,44 +1,27 @@
-import React, { useContext } from 'react'
-import {MdOutlineShoppingBag} from 'react-icons/md'
-import {RiMenu4Line} from 'react-icons/ri'
-import { navbarContext } from '../App'
-export default function NavBar() {
-    const [menuShowed,setMenuShowed]=useContext(navbarContext)
-    const handleMenu=()=>{
-        setMenuShowed(!menuShowed)
+import React from 'react'
+import { useContext } from 'react';
+import {FaRegMoon} from 'react-icons/fa';
+import {FiSun} from 'react-icons/fi'
+import { modeContext } from '../App';
+export default function Navbar() {
+  const [dark_Light,setDark_Light]=useContext(modeContext)
+    const turnMoon=()=>{
+      setDark_Light(false)
+      setTimeout(function() {
+        document.body.style.transition = "background-color 500ms";
+        document.body.style.backgroundColor = "#fdfdfd";
+    }, 200);
     }
+    const turnSun=()=>{
+      setDark_Light(true)
+      document.body.style.backgroundColor="#0a0f1e"
+    }
+
   return (
-    <div className='bg-white z-[100] pb-5 pt-4 '>
-    <div className='flex   justify-between mt-0 mx-6 '>
-        <button className='font-bold  text-xl hover:text-gray-600 ' >LUMA</button>
-        <div className='hidden z-50 lg:block' >
-            <ul className='flex  gap-7'>
-            <li className='uppercase mt-3 text-[12px] font-sans text-gray-500 cursor-pointer  font-[600] ' >home</li>
-            <li className='uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >our products</li>
-            <li className='uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >about</li>
-            <li className='uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >contact</li>
-            <li className='uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >blog</li>
-            <li className='uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >styleguide</li>
-            <li className='uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >licence</li>
-            <li className='flex font-bold hover:text-gray-500 cursor-pointer mt-[6px] ' ><MdOutlineShoppingBag size={30} className="pb-1" />0</li>
-            </ul>
-        </div>
-        <div className='flex lg:hidden ' >
-            <p className='flex font-bold mr-3 hover:text-gray-500 cursor-pointer mt-[6px] '><MdOutlineShoppingBag size={30} className="pb-1" />0</p>
-            <RiMenu4Line size={30} className="mt-[5px] cursor-pointer" onClick={handleMenu}/>
-                <div className={`absolute pb-4 transition-all duration-[700ms] ${!menuShowed ? "-top-[1500px]" : "top-[70px]" } -z-10 bg-white  left-0 w-full `} >
-                    <ul className='flex ml-[25px] flex-col-reverse gap-7'>
-                        <li className=' w-fit tracking-wide uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >licence</li>
-                        <li className=' w-fit tracking-wide uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >styleguide</li>
-                        <li className=' w-fit tracking-wide uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >blog</li>
-                        <li className=' w-fit tracking-wide uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >contact</li>
-                        <li className=' w-fit tracking-wide uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >about</li>
-                        <li className=' w-fit tracking-wide uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >our products</li>
-                        <li className=' w-fit tracking-wide uppercase mt-3 text-[12px] font-sans text-gray-500 cursor-pointer  font-[600] ' >home</li>
-                    </ul>
-                </div>
-        </div>
-    </div>
+    <div className='flex mx-4 sm:mx-0 justify-between'>
+      <p className='text-[#766dfc] text-center text-2xl font-bold font-mono '>Web<br/>Developer</p>
+      {dark_Light? <span > <FaRegMoon onClick={turnMoon} className='text-[#766dfc] mt-3' size={25} /> </span> :
+     <span > <FiSun onClick={turnSun} color="#766dfc" className='mt-3' size={26} /></span> }
     </div>
   )
 }
