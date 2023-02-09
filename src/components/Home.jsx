@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useContext } from 'react'
 import { modeContext } from '../App'
 import {FaFacebookSquare,FaGithub} from 'react-icons/fa';
@@ -71,7 +71,7 @@ export default function Home() {
                 <a href='https://www.linkedin.com/in/koussay-rouissi-7534b4246/'><IoLogoLinkedin color='#766dfc' size={30} className=" mr-8 sm:mb-4"/></a>
                 <p><HiOutlineMinus color='#766dfc' size={40} className="hidden sm:block rotate-90 relative right-[6px] bottom-3 "/></p>
             </div>
-            <div className='relative sm:-top-[300px] top-[190px] sm:grid sm:left-[100%] justify-center w-full sm:w-[30px]   sm:mx-0'>
+            <div className='relative sm:-top-[300px] hidden top-[190px] sm:grid sm:left-[97%] justify-center w-full sm:w-[30px]   sm:mx-0'>
                 <span><CgMouse className='rotate-180' color='#766dfc' size={30}/>  </span>
                 <span><HiOutlineMinus className='rotate-90 relative right-[5px] ' color='#766dfc' size={40}/></span>
             </div>

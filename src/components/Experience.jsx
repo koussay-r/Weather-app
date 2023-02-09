@@ -37,7 +37,7 @@ export default function Experience() {
                 </span>
                 <span className='flex mb-9'><MdVerified className='mt-[6px] mr-2 w-[20px] h-[20px]' color={dark_Light?'#766dfc':'#1d14a3'}/><p className={dark_Light?'text-white font-bold text-lg md:text-xl':'text-black/90 font-bold text-lg md:text-xl'}>Python</p>
                 </span>
-                <span className='flex mb-9'><MdVerified className='mt-[6px] mr-2 w-[20px] h-[20px]' color={dark_Light?'#766dfc':'#1d14a3'}/><p className={dark_Light?'text-white font-bold text-lg md:text-xl':'text-black/90 font-bold text-lg md:text-xl'}>SQL</p>
+                <span className='flex mb-9'><MdVerified className='mt-[6px] mr-2 w-[20px] h-[20px]' color={dark_Light?'#766dfc':'#1d14a3'}/><p className={dark_Light?'text-white font-bold text-lg md:text-xl':'text-black/90 font-bold text-lg md:text-xl'}>Mongodb</p>
                 </span>
                 </div>
                 <div className=''>
@@ -45,7 +45,7 @@ export default function Experience() {
                 </span>
                 <span className='flex mb-9'><MdVerified className='mt-[6px] mr-2 w-[20px] h-[20px]' color={dark_Light?'#766dfc':'#1d14a3'}/><p className={dark_Light?'text-white font-bold text-lg md:text-xl':'text-black/90 font-bold text-lg md:text-xl'}>Node js</p>
                 </span>
-                <span className='flex mb-9'><MdVerified className='mt-[6px] mr-2 w-[20px] h-[20px]' color={dark_Light?'#766dfc':'#1d14a3'}/><p className={dark_Light?'text-white font-bold text-lg md:text-xl':'text-black/90 font-bold text-lg md:text-xl'}>Django</p>
+                <span className='flex mb-9'><MdVerified className='mt-[6px] mr-2 w-[20px] h-[20px]' color={dark_Light?'#766dfc':'#1d14a3'}/><p className={dark_Light?'text-white font-bold text-lg md:text-xl':'text-black/90 font-bold text-lg md:text-xl'}>Express</p>
                 </span>
                 </div>
             </div>
