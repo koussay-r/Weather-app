@@ -3,6 +3,12 @@ import HomePgae from './components/HomePage/HomePgae'
 import { BrowserRouter } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import './index.css';
+import lenovo from "./assets/lenovo.png";
+import logitech from "./assets/logitech.png";
+import samsung from "./assets/samsung.png";
+import sony from "./assets/sony.png";
+import waitrose from "./assets/waitrose.png";
+import webflow from "./assets/webflow.png";
 export const navbarContext=createContext()
 export default function App() {
   const [menuShowed,setMenuShowed]=useState(false)
