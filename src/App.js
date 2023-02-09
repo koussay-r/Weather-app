@@ -1,33 +1,34 @@
 import React, { createContext, useState } from 'react'
-import Contact from './components/Contact'
-import Copyright from './components/Copyright'
-import Experience from './components/Experience'
-import Home from './components/Home'
-import Navbar from './components/Navbar'
-import Profile from './components/Profile'
-import Recentwork from './components/Recentwork'
-import Service from './components/Service'
-import './index.css'
-export const modeContext=createContext()
+import HomePgae from './components/HomePage/HomePgae'
+import { BrowserRouter } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import './index.css';
+import lenovo from "./assets/lenovo.png";
+import logitech from "./assets/logitech.png";
+import samsung from "./assets/samsung.png";
+import sony from "./assets/sony.png";
+import waitrose from "./assets/waitrose.png";
+import webflow from "./assets/webflow.png";
+export const navbarContext=createContext()
 export default function App() {
-  const [dark_Light,setDark_Light]=useState(true)
+  const [menuShowed,setMenuShowed]=useState(false)
+  const AllImages=[
+        {id:1,image:sony},
+        {id:2,image:webflow},
+        {id:3,image:samsung},
+        {id:4,image:logitech},
+        {id:5,image:lenovo},
+        {id:6,image:waitrose},
+  ]
   return (
-    <div>
 
-    
-      <modeContext.Provider value={[dark_Light,setDark_Light]}>
-      <div id="root1" className='mx-auto overflow-x-hidden mt-2 sm:max-w-[70%]'>
-      <Navbar/>
-      <Home/>
-      <Profile/>
-      <Experience/>
-      <Service/>
-      <Recentwork/>
-      <Contact/>
-      </div>
-      <Copyright/>
-      </modeContext.Provider>
-    
-    </div>
+    <>
+    <navbarContext.Provider value={[menuShowed,setMenuShowed,AllImages]} >
+    <BrowserRouter>
+    <NavBar/> 
+    <HomePgae/>
+    </BrowserRouter>
+    </navbarContext.Provider>
+    </>
   )
 }
