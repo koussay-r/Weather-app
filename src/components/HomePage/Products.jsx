@@ -34,17 +34,17 @@ export default function Products() {
               })
             }
         </div>
-        <div className='grid pb-3 grid-cols-2 w-full mt-7 grid-rows-2'>
-          <div>
-            <p className=' font-quicksand'>Meet the Belmont, by Pablo Designs</p>
+        <div className='md:grid pb-3  grid-cols-2 w-full mt-7 grid-rows-3'>
+          <div className='mt-3 md:mt-0'>
+            <p className=' font-medium text-gray-700 font-quicksand text-2xl'>Meet the Belmont, by<br/> Pablo Designs</p>
           </div>
-          <div>
-            <p className=' font-quicksand'>By fusing the highest technical sensibilities with the most appropriate material palette, Pablo is able to create unique, timeless designs with the power to transform any environment.</p>
+          <div className='mt-4 md:mt-0'>
+            <p className=' font-quicksand text-[16px] text-gray-600 font-[600]'>By fusing the highest technical sensibilities with the most appropriate material palette, Pablo is able to create unique, timeless designs with the power to transform any environment.</p>
           </div>
           <div className='hidden md:block'>
 
           </div>
-          <div className=' md:col-span-1 col-span-2'>
+          <div className=' md:col-span-1 mt-4 col-span-2'>
 
           <div className=' mt-0 col-span-2 md:col-span-1 hover:border-gray-500 group border-gray-300 cursor-pointer  flex justify-between w-full border'>
             <button className=' ml-4 py-9 font-[600] text-black/90 uppercase'>discover more products </button>
