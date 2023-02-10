@@ -9,16 +9,20 @@ import samsung from "./assets/samsung.png";
 import sony from "./assets/sony.png";
 import waitrose from "./assets/waitrose.png";
 import webflow from "./assets/webflow.png";
+import bolaDisc from "./assets/bola disc.png";
+import bolaHalo from "./assets/product1.png"
 export const navbarContext=createContext()
 export default function App() {
   const [menuShowed,setMenuShowed]=useState(false)
   const AllImages=[
-        {id:1,image:sony},
-        {id:2,image:webflow},
-        {id:3,image:samsung},
-        {id:4,image:logitech},
-        {id:5,image:lenovo},
-        {id:6,image:waitrose},
+        {id:1,name:"",image:sony},
+        {id:2,name:"",image:webflow},
+        {id:3,name:"",image:samsung},
+        {id:4,name:"",image:logitech},
+        {id:5,name:"",image:lenovo},
+        {id:6,name:"",image:waitrose},
+        {id:7,name:"",image:bolaDisc},
+        {id:8,name:"",image:bolaHalo},
   ]
   return (
 

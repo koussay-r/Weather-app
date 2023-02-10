@@ -8,8 +8,6 @@ export default function HomePgae() {
   const menuShowed=useContext(navbarContext)
   return (
     <>
-    <div className='w-full'>
-
     <div className='w-full h-[630px]'>
         <img src={lampWall} alt="" className='w-full absolute brightness-75 object-cover -z-20 h-[630px] '/>
         <div className='flex justify-center'>
@@ -25,7 +23,7 @@ export default function HomePgae() {
     </div>
     <CampaniesLogos/>
     <Products/>
-    </div>
+    
     </>
   )
 }
