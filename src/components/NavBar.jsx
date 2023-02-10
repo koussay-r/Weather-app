@@ -1,11 +1,22 @@
 import React, { useContext } from 'react'
+import { useState } from 'react'
 import {MdOutlineShoppingBag} from 'react-icons/md'
 import {RiMenu4Line} from 'react-icons/ri'
 import { navbarContext } from '../App'
 export default function NavBar() {
     const [menuShowed,setMenuShowed]=useContext(navbarContext)
+    const [zIndex,setZindex]=useState("-z-10")
     const handleMenu=()=>{
         setMenuShowed(!menuShowed)
+        if(!menuShowed){ 
+            setTimeout(()=>{
+                setZindex("z-10")
+            },700)
+        }
+        else{
+            console.log(menuShowed)
+            setZindex("-z-10")
+        }
     }
   return (
     <div className='bg-white z-[100] pb-5 pt-4 '>
@@ -26,7 +37,7 @@ export default function NavBar() {
         <div className='flex lg:hidden ' >
             <p className='flex font-bold mr-3 hover:text-gray-500 cursor-pointer mt-[6px] '><MdOutlineShoppingBag size={30} className="pb-1" />0</p>
             <RiMenu4Line size={30} className="mt-[5px] cursor-pointer" onClick={handleMenu}/>
-                <div className={`absolute pb-4 transition-all duration-[700ms] ${!menuShowed ? "-top-[1500px]" : "top-[70px]" } -z-10 bg-white  left-0 w-full `} >
+                <div className={`absolute pb-4 transition-all duration-[700ms] ${!menuShowed ? "-top-[1500px]" : "top-[70px]" } ${zIndex} bg-white  left-0 w-full `} >
                     <ul className='flex ml-[25px] flex-col-reverse gap-7'>
                         <li className=' w-fit tracking-wide uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >licence</li>
                         <li className=' w-fit tracking-wide uppercase mt-3 text-[12px] font-sans cursor-pointer hover:text-gray-500 font-[600] ' >styleguide</li>
