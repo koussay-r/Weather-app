@@ -2,10 +2,11 @@ import React from 'react'
 import { useContext } from 'react'
 import { navbarContext } from '../../App'
 import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
+import ProductsItems from './ProductsItems'
 export default function Products() {
   const menuShowed=useContext(navbarContext)
   return (
-    <div className='w-[85%] block mx-auto'>
+    <div className='w-[95%] block mx-auto'>
         <p className=' font-quicksand w-[320px] text-black/90 font-semibold text-4xl '>The right light can transform any environment</p>
         <div className=' md:flex gap-7 mt-10'>
             {
@@ -50,6 +51,21 @@ export default function Products() {
             <button className=' ml-4 py-9 font-[600] text-black/90 uppercase'>discover more products </button>
             <HiOutlineArrowNarrowRight className='ml-1 mr-12 mt-[39px] group-hover:translate-x-3 group-active:translate-x-3 transition-all duration-500' color='black' size={20}/>
           </div>
+          </div>
+        </div>
+        <div className='mt-8'>
+          <p>
+            shop lighting
+          </p>
+          <p>Stylish modern lighting options</p>
+          <div className='grid grid-cols-1 md:grid-cols-2 mt-8  lg:grid-cols-4 lg:grid-rows-3 gap-4'>
+            {menuShowed[2].map(item=>{
+              return (
+                
+                  item.id>=9&&item.id<=20 &&
+                  <ProductsItems key={item.id} id={item.id} name={item.name} cost={item.price} image={item.image} />
+              )
+            })}
           </div>
         </div>
     </div>
