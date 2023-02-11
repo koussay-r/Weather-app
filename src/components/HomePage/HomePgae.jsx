@@ -4,6 +4,7 @@ import CampaniesLogos from './CampaniesLogos'
 import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
 import { navbarContext } from '../../App'
 import Products from './Products'
+import Container from './ParallaxBg'
 export default function HomePgae() {
   const menuShowed=useContext(navbarContext)
   return (
@@ -23,7 +24,7 @@ export default function HomePgae() {
     </div>
     <CampaniesLogos/>
     <Products/>
-    
+    <Container/>
     </>
   )
 }

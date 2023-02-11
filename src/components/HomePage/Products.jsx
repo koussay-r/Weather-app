@@ -6,7 +6,7 @@ import ProductsItems from './ProductsItems'
 export default function Products() {
   const menuShowed=useContext(navbarContext)
   return (
-    <div className='w-[95%] block mx-auto'>
+    <div className='w-[95%] pb-10 block mx-auto'>
         <p className=' font-quicksand w-[320px] text-black/90 font-semibold text-4xl '>The right light can transform any environment</p>
         <div className=' md:flex gap-7 mt-10'>
             {
@@ -53,12 +53,15 @@ export default function Products() {
           </div>
           </div>
         </div>
-        <div className='mt-8'>
-          <p>
+        <div className='mt-8 '>
+          <div className='w-[97%] block mx-auto'>
+
+          <p className='text-[12px] text-gray-500  font-[600] uppercase'>
             shop lighting
           </p>
-          <p>Stylish modern lighting options</p>
-          <div className='grid grid-cols-1 md:grid-cols-2 mt-8  lg:grid-cols-4 lg:grid-rows-3 gap-4'>
+          <p className='text-3xl font-quicksand pt-1 text-black/90'>Stylish modern lighting options</p>
+          </div>
+          <div className='grid grid-cols-1 md:grid-cols-2 mt-16  lg:grid-cols-4 lg:grid-rows-3 gap-4'>
             {menuShowed[2].map(item=>{
               return (
                 
@@ -67,6 +70,12 @@ export default function Products() {
               )
             })}
           </div>
+          <button className='block mt-4 mx-auto group hover:bg-opacity-[0.97] text-white bg-[#18181d]  '>
+            <div className='flex py-6 uppercase justify-center w-[250px] text-sm font-bold'>
+
+            view all products <HiOutlineArrowNarrowRight size={18} className='ml-2 group-hover:translate-x-2 transition-all duration-300 mt-[2px]'/>
+            </div>
+        </button>  
         </div>
     </div>
   )
