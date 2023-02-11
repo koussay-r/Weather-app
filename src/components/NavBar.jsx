@@ -19,7 +19,7 @@ export default function NavBar() {
         }
     }
   return (
-    <div className='bg-white z-[100] pb-5 pt-4 '>
+    <div className='bg-white fixed right-0 left-0 z-[100] pb-5 pt-4 '>
     <div className='flex   justify-between mt-0 mx-6 '>
         <button className='font-bold  text-xl hover:text-gray-600 ' >LUMA</button>
         <div className='hidden z-50 lg:block' >
