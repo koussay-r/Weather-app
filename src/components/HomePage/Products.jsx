@@ -8,7 +8,7 @@ export default function Products() {
   return (
     <div className='w-[95%] pb-10 block mx-auto'>
         <p className=' font-quicksand w-[320px] text-black/90 font-semibold text-4xl '>The right light can transform any environment</p>
-        <div className=' md:flex gap-7 mt-10'>
+        <div className=' md:flex gap-2 mt-10'>
             {
               menuShowed[2].map(items=>{
                 return (
@@ -23,7 +23,7 @@ export default function Products() {
                       </div> 
                       : 
                       <div key={items.id} className='relative sm:w-[500px] md:w-full   mt-12 md:mt-0 cursor-pointer flex justify-center  group h-[500px]'>
-                        <img src={items.image} alt="" className=' transition-all duration-300 group-hover:brightness-90  sm:w-[500px] md:w-[600px] object-cover w-[600px] h-[500px]'/>
+                        <img src={items.image} alt="" className=' transition-all duration-300 group-hover:brightness-90  sm:w-[500px] md:w-full object-cover w-[600px] h-[500px]'/>
                         <button className=' font-[600] group-hover:block transition-all w-[90%] duration-700 hidden mx-auto text-md absolute bottom-4 py-3 bg-white text-black'>View Product</button>
                       </div>
                       }
