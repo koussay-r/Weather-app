@@ -12,6 +12,7 @@ import webflow from "./assets/webflow.png";
 import bolaDisc from "./assets/bola disc.png";
 import bolaHalo from "./assets/product1.png";
 import cielo from './assets/cielo.png'
+import bolaStears from './assets/bolaStears.jpg'
 import cornerOffice from './assets/corner-office.jpg'
 import solis from './assets/solis.jpg';
 import giraffa from './assets/giraffa_light.png'
@@ -35,19 +36,20 @@ export default function App() {
         {id:6,name:"",price:0,image:waitrose},
         {id:7,name:"",price:0,image:bolaDisc},
         {id:8,name:"",price:0,image:bolaHalo},
-        {id:9,name:"Giraffa",price:"99.99",image:giraffa},
-        {id:10,name:"Solis",price:"79.99",image:solis},
-        {id:11,name:"Corner Office",price:"190.00",image:cornerOffice},
-        {id:12,name:"Cielo",price:"89.99",image:cielo},
-        {id:13,name:"Uma Mini",price:"155.99",image:uma_mini},
-        {id:14,name:"Contour",price:"245.99",image:contour},
-        {id:15,name:"Circa",price:"398.99",image:circa},
-        {id:16,name:"Bola Sphere",price:"789.99",image:bola_sphere},
-        {id:17,name:"Bola Disc",price:"1,125.99",image:bolaDisc},
-        {id:18,name:"Belmont",price:"717.99",image:belMont},
-        {id:19,name:"Bel Occhio",price:"515.99",image:bel_occhio},
-        {id:20,name:"Bola Halo",price:"159.99",image:bolaHalo},
-        {id:21,name:"",price:0,image:belmonte},]
+        {id:9,name:"",price:0,image:bolaStears},
+        {id:10,name:"Giraffa",price:"99.99",image:giraffa},
+        {id:11,name:"Solis",price:"79.99",image:solis},
+        {id:12,name:"Corner Office",price:"190.00",image:cornerOffice},
+        {id:13,name:"Cielo",price:"89.99",image:cielo},
+        {id:14,name:"Uma Mini",price:"155.99",image:uma_mini},
+        {id:15,name:"Contour",price:"245.99",image:contour},
+        {id:16,name:"Circa",price:"398.99",image:circa},
+        {id:17,name:"Bola Sphere",price:"789.99",image:bola_sphere},
+        {id:18,name:"Bola Disc",price:"1,125.99",image:bolaDisc},
+        {id:19,name:"Belmont",price:"717.99",image:belMont},
+        {id:20,name:"Bel Occhio",price:"515.99",image:bel_occhio},
+        {id:21,name:"Bola Halo",price:"159.99",image:bolaHalo},
+        {id:22,name:"",price:0,image:belmonte},]
   return (
     <>
     <navbarContext.Provider value={[menuShowed,setMenuShowed,AllImages]} >

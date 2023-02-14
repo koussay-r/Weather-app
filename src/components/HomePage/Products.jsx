@@ -66,7 +66,7 @@ export default function Products() {
               return (
                 
                   item.id>=9&&item.id<=20 &&
-                  <ProductsItems key={item.id} id={item.id} name={item.name} cost={item.price} image={item.image} />
+                  <ProductsItems key={item.id} hidden={""} featuredPlace={""} id={item.id} name={item.name} cost={item.price} image={item.image} />
               )
             })}
           </div>
