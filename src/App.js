@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react'
 import HomePgae from './components/HomePage/HomePgae'
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import './index.css';
 import lenovo from "./assets/lenovo.png";
@@ -51,8 +51,10 @@ export default function App() {
     <>
     <navbarContext.Provider value={[menuShowed,setMenuShowed,AllImages]} >
     <BrowserRouter>
-    <NavBar/> 
-    <HomePgae/>
+    <NavBar/>
+    <Routes>
+      <Route path='/' index element={<HomePgae/>}/>
+    </Routes> 
     </BrowserRouter>
     </navbarContext.Provider>
     </>
