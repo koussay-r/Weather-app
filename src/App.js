@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
+import {BsFillCloudsFill,BsSunFill} from "react-icons/bs"
+import bgInit from './assets/noaa-ZVhm6rEKEX8-unsplash.jpg'
 export default function App() {
-  const [bgImage, setBgImage] = useState("");
+  const [bgImage, setBgImage] = useState(bgInit);
   const [weatherdata,setWeatherData]=useState()
   const [inputValue, setInputValue] = useState("");
   const [cityName,setCityName]=useState("")
@@ -15,8 +17,7 @@ export default function App() {
     try{
       const response=await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${API_key}`)
       setCityName(response.data.name)
-      setWeatherData({cityname:response.data.name,temp:response.data.main.temp/10,humidity:response.data.main.humidity,wind:response.data.wind.speed})
-      console.log(response.data);
+      setWeatherData({cityname:response.data.name,temp:response.data.main.temp/10,wea:response.data.weather[0].main,humidity:response.data.main.humidity,wind:response.data.wind.speed})
     }catch(err){
       console.log(err)
     }
@@ -72,10 +73,18 @@ export default function App() {
           {
             weatherdata &&
             <div>
-            <p>{weatherdata.cityname}</p>
-            <p>{weatherdata.temp}</p>
-            <p>{weatherdata.humidity}</p>
-            <p>{weatherdata.wind}</p>
+            <p className="text-white text-2xl font-Montserrat mt-2 pb-2 ml-3 font-bold">Weather in {weatherdata.cityname}</p>
+            <p className="text-white text-3xl ml-6 mt-5 font-[600] ">{weatherdata.temp}°C</p>
+            {
+              weatherdata.wea==="Clouds"?
+              <p className="text-white text-3xl ml-5 flex mt-5"><BsFillCloudsFill className="mr-3 mt-0" color="white" size={38}/> Clouds</p>
+              :
+              <p className="text-white text-3xl ml-5 flex mt-5">
+                <BsSunFill color="white" className="mr-3 mt-0" size={38}/> Sunny
+              </p>
+            }
+            <p className="text-white text-sm mt-8 font-[600] pb-2 ml-6 ">Humidity: {weatherdata.humidity}%</p>
+            <p className="text-white text-sm font-[600] ml-6 pb-6 ">Wind: {weatherdata.wind} km/h</p>
             </div>
           }
         </div>
