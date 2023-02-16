@@ -17,7 +17,7 @@ export default function App() {
     try{
       const response=await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${API_key}`)
       setCityName(response.data.name)
-      setWeatherData({cityname:response.data.name,temp:response.data.main.temp/10,wea:response.data.weather[0].main,humidity:response.data.main.humidity,wind:response.data.wind.speed})
+      setWeatherData({cityname:response.data.name,temp:((response.data.main.temp/10).toString()).substring(0,5),wea:response.data.weather[0].main,humidity:response.data.main.humidity,wind:response.data.wind.speed})
     }catch(err){
       console.log(err)
     }
@@ -74,7 +74,7 @@ export default function App() {
             weatherdata &&
             <div>
             <p className="text-white text-2xl font-Montserrat mt-2 pb-2 ml-3 font-bold">Weather in {weatherdata.cityname}</p>
-            <p className="text-white text-3xl ml-6 mt-5 font-[600] ">{weatherdata.temp}°C</p>
+            <div className="text-white text-3xl ml-6 mt-5 max-w-[200px] font-[600] ">{(weatherdata.temp)}°C</div>
             {
               weatherdata.wea==="Clouds"?
               <p className="text-white text-3xl ml-5 flex mt-5"><BsFillCloudsFill className="mr-3 mt-0" color="white" size={38}/> Clouds</p>
