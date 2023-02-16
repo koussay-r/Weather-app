@@ -7,14 +7,17 @@ export default function App() {
   const handleInptValue=(e)=>{
     setInputValue(e.target.value)
   }
+  const key=process.env.REACT_APP_UNSPLASH_API_KEY
   const handleBgImage=async()=>{
-    console.log(process.env.REACT_APP_UNSPLASH_API_KEY)
+    
     const headers={
-      Authorization: `Client-ID ${process.env.REACT_APP_UNSPLASH_API_KEY}`
+      Authorization: `Client-ID ${key}`
     }
+    console.log(key)
     try{
       const response=await axios.get(`https://api.unsplash.com/search/photos?query=${inputValue}`,{headers})
       console.log(response)
+      setBgImage(response.data)
     }
     catch(err){
       console.log(err)
