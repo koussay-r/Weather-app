@@ -13,7 +13,7 @@ export default function App() {
   };
   
   const API_key=process.env.REACT_APP_OPEN_WEATHER_API_KEY;
-  const handleBgImage = async () => {
+  const handleWeather = async () => {
     try{
       const response=await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${API_key}`)
       setCityName(response.data.name)
@@ -66,7 +66,7 @@ export default function App() {
           />
           
 
-          <HiOutlineSearch className="text-white cursor-pointer mt-2 text-md ml-2" onClick={handleBgImage} />
+          <HiOutlineSearch className="text-white cursor-pointer mt-2 text-md ml-2" onClick={handleWeather} />
           
         </div>
         <div>
